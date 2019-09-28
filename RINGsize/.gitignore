@@ -1,0 +1,6 @@
+# GIT Ignore for ESTEMApy/RINGSize
+
+# shared library
+*.so
+
+

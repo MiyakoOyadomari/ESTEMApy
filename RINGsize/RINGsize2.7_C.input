@@ -1,0 +1,60 @@
+# This parameter file is required as an argument to exec the 'RINGsize2.7.py.'
+# tmask is a range of steps to be carried out. tmask=1 will run the whole
+# pipeline.
+#
+# 1, Load a fits file and creat an array of image data after uniti conversion.
+# 2, Plot (Pop-up) the image map. You can specify the ranges of axes.
+# 3, Calculate the radius for the initial center position,
+#    and create the circle on the maser map.
+# 4, Search the center position using the original logarithmic flux data (without random noise)
+# 5, Search for the optimum center position using Monte Carlo method.
+# 6, Plot the histogram of center position obtained in tmask 5.
+# 7, Plot the Final Map
+# 8, Calcurate ring width
+
+# Specfy the tmask ID (begin, end, tmask=1 means all procedures.)
+tmask = 1,2
+
+# FITS file name. This is a image data produced by AIPS (After 'SQUASH2').
+image_file_name = '/Users/bxcam/r18145a_bxcam_v2_7.sumim'
+
+# Directory for output fules.
+out_dir = '/Users/bxcam/r18145a/v2'
+
+# Prefix of output files.
+output_file_name = 'r18145a_v2_7'
+
+
+# tmask 2: You can specify the ranges of axes.
+# If you want to plot the full range image map, comment out the parameters.
+#x_axis = 550, 1050
+#y_axis = 550, 1050
+
+
+# tmask 3, 4, and 5: Center position and radius maximum for calculating
+# flux-sum in the circle.
+initial_center = 826,785
+initial_radius =150
+
+# tmask 3, 4, and 5: Cumulative ratio of flux-sum in the circle
+cum_flux_lo = 0.1
+cum_flux_up = 0.9
+
+
+# tmask 3, 4, 5, and 7: Area size (channel) of a image map.
+# Set a even numberd channels!
+area_size_xy = 400, 400
+
+#tmask 4: x-y range (channels) for searching the optimum center position
+# and radius
+search_range = 16
+
+
+# tmask 5: Random noise and a number of iteration
+noise = 1.08
+itn = 500
+
+
+# tmask 8: The maximum of color bar range in the Final Map.
+cbmax = 100
+
